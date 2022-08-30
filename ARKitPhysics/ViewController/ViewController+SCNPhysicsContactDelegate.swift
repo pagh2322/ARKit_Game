@@ -11,8 +11,17 @@ import ARKit
 
 extension ViewController: SCNPhysicsContactDelegate {
     
-    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-        guard let contactType = checkContactType(contact.nodeA, contact.nodeB) else { return }
+    func physicsWorld(
+        _ world: SCNPhysicsWorld,
+        didBegin contact: SCNPhysicsContact
+    ) {
+        guard
+            let contactType = checkContactType(
+                contact.nodeA,
+                contact.nodeB)
+        else {
+            return
+        }
         
         switch contactType {
         case .bulletAndEnemy(let bool):
@@ -61,7 +70,11 @@ extension ViewController: SCNPhysicsContactDelegate {
         }
     }
     
-    func didBulletEnemyContact(_ bulletNode: SCNNode, _ enemyNode: SCNNode, at location: SCNVector3) {
+    func didBulletEnemyContact(
+        _ bulletNode: SCNNode,
+        _ enemyNode: SCNNode,
+        at location: SCNVector3
+    ) {
         scoreCount += Int.random(in: 1...5)
         
         guard let particleNode = generateParticleNode(location: location) else { return }

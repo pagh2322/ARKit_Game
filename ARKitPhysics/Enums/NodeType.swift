@@ -53,7 +53,8 @@ enum NodeType {
     
     var geometry: SCNGeometry {
         switch self {
-        case .bullet: return SCNSphere(radius: 0.15)
+        case .bullet:
+            return SCNSphere(radius: 0.15)
         case .enemy:
             return SCNTube(
                 innerRadius: 0.02,

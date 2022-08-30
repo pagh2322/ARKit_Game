@@ -32,16 +32,16 @@ extension ViewController {
         sceneView.scene.physicsWorld.contactDelegate = self
     }
     func respawnPlayerNode() {
-        let _ = respawnNode(type: .player)
+        _ = respawnNode(type: .player)
     }
     func startRespawnEnemyNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 0.5...2)), repeats: true) { _ in
-            let _ = self.respawnNode(type: .enemy)
+            _ = self.respawnNode(type: .enemy)
         }
     }
     func startRespawnLifeBoxNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 10...20)), repeats: true) { _ in
-            let _ = self.respawnNode(type: .lifeBox)
+            _ = self.respawnNode(type: .lifeBox)
         }
     }
     
@@ -53,7 +53,10 @@ extension ViewController {
     // MARK: - Attack with bullet by tapping
     
     func addTapGestureToSceneView() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapSceneView(withGestureRecognizer:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(tapSceneView(withGestureRecognizer:))
+        )
         sceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     @objc func tapSceneView(withGestureRecognizer recognizer: UIGestureRecognizer) {

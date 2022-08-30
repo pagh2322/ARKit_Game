@@ -22,15 +22,29 @@ extension ViewController {
         let node = SCNNode()
         node.geometry = type.geometry
         
-        node.geometry?.materials = [generateMaterial(type: type)]
+        node.geometry?.materials = generateMaterials(type: type)
         node.name = type.name
-        setPhysicsBody(node, type: type)
+        generatePhysicsBody(node, type: type)
         return node
     }
     
-    func setPhysicsBody(_ node: SCNNode, type: NodeType) {
-        let shape = SCNPhysicsShape(geometry: node.geometry!)
-        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
+    func generateMaterials(type: NodeType) -> [SCNMaterial] {
+        let material = SCNMaterial()
+        material.lightingModel = .physicallyBased
+        material.metalness.contents = 1.0
+        material.roughness.contents = 0.0
+        
+        material.diffuse.contents = type.materialContents
+        return [material]
+    }
+    
+    func generatePhysicsBody(
+        _ node: SCNNode,
+        type: NodeType
+    ) {
+        let physicsBody = SCNPhysicsBody(
+            type: .dynamic,
+            shape: SCNPhysicsShape(geometry: node.geometry!))
         physicsBody.isAffectedByGravity = false
         physicsBody.categoryBitMask = type.categoryBitMask
         physicsBody.contactTestBitMask = type.contactTestBitMask
@@ -38,17 +52,10 @@ extension ViewController {
         node.physicsBody = physicsBody
     }
     
-    func generateMaterial(type: NodeType) -> SCNMaterial {
-        let material = SCNMaterial()
-        material.lightingModel = .physicallyBased
-        material.metalness.contents = 1.0
-        material.roughness.contents = 0.0
-        
-        material.diffuse.contents = type.materialContents
-        return material
-    }
-    
-    func setPosition(_ node: SCNNode, type: NodeType) {
+    func setPosition(
+        _ node: SCNNode,
+        type: NodeType
+    ) {
         switch type {
         case .bullet, .player:
             let (x, y, z) = getCurrentLocation()
