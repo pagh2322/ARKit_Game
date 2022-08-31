@@ -51,29 +51,6 @@ enum NodeType {
         }
     }
     
-    var geometry: SCNGeometry {
-        switch self {
-        case .bullet:
-            return SCNSphere(radius: 0.15)
-        case .enemy:
-            return SCNTube(
-                innerRadius: 0.02,
-                outerRadius: 0.05,
-                height: 0.2)
-        case .lifeBox:
-            return SCNBox(
-                width: 0.4,
-                height: 0.4,
-                length: 0.4,
-                chamferRadius: 0.04)
-        case .player:
-            return SCNTube(
-                innerRadius: 0,
-                outerRadius: 0.25,
-                height: 1.8)
-        }
-    }
-    
     var materialContents: UIColor {
         switch self {
         case .bullet:

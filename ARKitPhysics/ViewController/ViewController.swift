@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreCountLabel: UILabel!
     @IBOutlet weak var lifeCountLabel: UILabel!
     
+    var playerNode: SCNNode?
+    
     var isGameOver = false
     var scoreCount = 0 {
         didSet {

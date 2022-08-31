@@ -24,6 +24,7 @@
 		B734415C28B8F4A200F1DF66 /* ViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734415B28B8F4A200F1DF66 /* ViewController+ARSessionDelegate.swift */; };
 		B734415E28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734415D28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift */; };
 		B734416028B8F6AD00F1DF66 /* ContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734415F28B8F6AD00F1DF66 /* ContactType.swift */; };
+		B7B7DC0628BF41C100F4AD13 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B7DC0528BF41C100F4AD13 /* art.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B734415B28B8F4A200F1DF66 /* ViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		B734415D28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SCNPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
 		B734415F28B8F6AD00F1DF66 /* ContactType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactType.swift; sourceTree = "<group>"; };
+		B7B7DC0528BF41C100F4AD13 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		638E27781FEF3FE500C2DE06 /* ARKitPhysics */ = {
 			isa = PBXGroup;
 			children = (
+				B7B7DBE328BF25B900F4AD13 /* 3DModels */,
 				B734415428B8EDD900F1DF66 /* Enums */,
 				B734414F28B8B9DE00F1DF66 /* ViewController */,
 				B734414C28B8B8A300F1DF66 /* Extensions */,
@@ -96,6 +99,7 @@
 				638E27801FEF3FE500C2DE06 /* Assets.xcassets */,
 				638E27821FEF3FE500C2DE06 /* LaunchScreen.storyboard */,
 				638E277D1FEF3FE500C2DE06 /* Main.storyboard */,
+				B7B7DC0528BF41C100F4AD13 /* art.scnassets */,
 			);
 			path = ARKitPhysics;
 			sourceTree = "<group>";
@@ -130,6 +134,13 @@
 				B734415F28B8F6AD00F1DF66 /* ContactType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		B7B7DBE328BF25B900F4AD13 /* 3DModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3DModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				638E277F1FEF3FE500C2DE06 /* Main.storyboard in Resources */,
 				63105ECA1FF12A200039D35F /* spark.png in Resources */,
 				63105ECB1FF12A200039D35F /* reactor.scnp in Resources */,
+				B7B7DC0628BF41C100F4AD13 /* art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -343,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -358,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VYPR8MZ57;
 				INFOPLIST_FILE = ARKitPhysics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pagh2322.arkitgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,7 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VYPR8MZ57;
 				INFOPLIST_FILE = ARKitPhysics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pagh2322.arkitgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -21,6 +21,7 @@ extension ViewController {
         let configuration = ARWorldTrackingConfiguration()
         
         sceneView.session.run(configuration)
+        sceneView.showsStatistics = true
         setUpDelegates()
         respawnPlayerNode()
         startRespawnEnemyNode()
@@ -32,11 +33,12 @@ extension ViewController {
         sceneView.scene.physicsWorld.contactDelegate = self
     }
     func respawnPlayerNode() {
-        _ = respawnNode(type: .player)
+        self.playerNode = respawnNode(type: .player)
     }
     func startRespawnEnemyNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 0.5...2)), repeats: true) { _ in
-            _ = self.respawnNode(type: .enemy)
+//            _ = self.respawnNode(type: .enemy)
+            self.respawnEnemy()
         }
     }
     func startRespawnLifeBoxNode() {
@@ -64,7 +66,8 @@ extension ViewController {
         attckByBullet(at: position)
     }
     func attckByBullet(at position: CGPoint) {
-        let bulletNode = respawnNode(type: .bullet)
+//        let bulletNode = respawnNode(type: .bullet)
+        let bulletNode = respawnBanana()
         applyForceToBullet(bulletNode, at: position)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
