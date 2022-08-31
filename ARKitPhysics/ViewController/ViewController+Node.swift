@@ -89,6 +89,25 @@ extension ViewController {
         return node
     }
     
+    func respawnIceCream() -> SCNNode {
+        let node = generateIceCream()
+        setPosition(node, type: .lifeBox)
+        sceneView.scene.rootNode.addChildNode(node)
+        return node
+    }
+    func generateIceCream() -> SCNNode {
+        let scene = SCNScene(named: "art.scnassets/IceCream.scn")!
+        let node = scene.rootNode.childNodes[0]
+        node.scale = .init(0.048, 0.04, 0.048)
+        
+        node.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "art.scnassets/IceCreamTexture.jpg")
+        
+        let type = NodeType.lifeBox
+        node.name = type.name
+        generatePhysicsBody(node, type: type)
+        return node
+    }
+    
     func generateMaterials(type: NodeType) -> [SCNMaterial] {
         let material = SCNMaterial()
         material.lightingModel = .physicallyBased

@@ -37,13 +37,12 @@ extension ViewController {
     }
     func startRespawnEnemyNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 0.5...2)), repeats: true) { _ in
-//            _ = self.respawnNode(type: .enemy)
             self.respawnEnemy()
         }
     }
     func startRespawnLifeBoxNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 10...20)), repeats: true) { _ in
-            _ = self.respawnNode(type: .lifeBox)
+            _ = self.respawnIceCream()
         }
     }
     
@@ -66,7 +65,6 @@ extension ViewController {
         attckByBullet(at: position)
     }
     func attckByBullet(at position: CGPoint) {
-//        let bulletNode = respawnNode(type: .bullet)
         let bulletNode = respawnBanana()
         applyForceToBullet(bulletNode, at: position)
         
