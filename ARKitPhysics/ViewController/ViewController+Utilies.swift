@@ -36,14 +36,4 @@ extension ViewController {
         return (direction.x, direction.y, direction.z)
     }
     
-    func applyForceToBullet(
-        _ node: SCNNode,
-        at position: CGPoint
-    ) {
-        guard let physicsBody = node.physicsBody else { return }
-        
-        guard let direction = fetchForceDirection(at: position) else { return }
-        physicsBody.applyForce(SCNVector3(direction * 4), asImpulse: true)
-    }
-    
 }

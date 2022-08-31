@@ -19,11 +19,10 @@ extension ViewController {
     
     func setUpSceneView() {
         let configuration = ARWorldTrackingConfiguration()
-        
         sceneView.session.run(configuration)
-        sceneView.showsStatistics = true
+        
         setUpDelegates()
-        respawnPlayerNode()
+        setPlayerNode()
         startRespawnEnemyNode()
         startRespawnLifeBoxNode()
     }
@@ -32,17 +31,17 @@ extension ViewController {
         sceneView.session.delegate = self
         sceneView.scene.physicsWorld.contactDelegate = self
     }
-    func respawnPlayerNode() {
-        self.playerNode = respawnNode(type: .player)
+    func setPlayerNode() {
+        self.playerNode = respawnPlayer().node
     }
     func startRespawnEnemyNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 0.5...2)), repeats: true) { _ in
-            self.respawnEnemy()
+            self.respawnMinion()
         }
     }
     func startRespawnLifeBoxNode() {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 10...20)), repeats: true) { _ in
-            _ = self.respawnIceCream()
+            self.respawnIceCream()
         }
     }
     
@@ -62,14 +61,16 @@ extension ViewController {
     }
     @objc func tapSceneView(withGestureRecognizer recognizer: UIGestureRecognizer) {
         let position = recognizer.location(in: self.sceneView)
-        attckByBullet(at: position)
+        attckByBanana(at: position)
     }
-    func attckByBullet(at position: CGPoint) {
-        let bulletNode = respawnBanana()
-        applyForceToBullet(bulletNode, at: position)
+    func attckByBanana(at position: CGPoint) {
+        let bananaNodeContainer = respawnBanana()
+        guard let direction = fetchForceDirection(at: position) else { return }
+        bananaNodeContainer.applyForce(direction)
         
+        // Remove banana after 10s
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            bulletNode.removeFromParentNode()
+            bananaNodeContainer.node.removeFromParentNode()
         }
     }
     

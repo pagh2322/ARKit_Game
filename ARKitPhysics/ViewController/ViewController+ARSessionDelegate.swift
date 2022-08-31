@@ -15,16 +15,14 @@ extension ViewController: ARSessionDelegate {
         didUpdate frame: ARFrame
     ) {
         let currentTransform = frame.camera.transform
-        playerNode?.runAction(.move(to: SCNVector3(currentTransform.translation), duration: 0.5))
+        
+        playerNode?.runAction(.move(
+            to: SCNVector3(currentTransform.translation),
+            duration: 0.5))
+        
         sceneView.scene.rootNode.childNodes
-            .filter { $0.name == NodeType.enemy.name }
-            .forEach {
-                $0.runAction(.move(to: SCNVector3(currentTransform.translation), duration: 2))
-                
-                let constraint = SCNLookAtConstraint(target: playerNode)
-                constraint.isGimbalLockEnabled = true
-                constraint.localFront = .init(1, 0, 0)
-                $0.constraints = [constraint]
-            }
+            .filter { $0.name == NodeType.minion.name }
+            .map { MinionNodeContainer(node: $0) }
+            .forEach { $0.moveTowards(to: currentTransform.translation) }
     }
 }

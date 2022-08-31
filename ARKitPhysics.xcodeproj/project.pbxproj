@@ -25,6 +25,8 @@
 		B734415E28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734415D28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift */; };
 		B734416028B8F6AD00F1DF66 /* ContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734415F28B8F6AD00F1DF66 /* ContactType.swift */; };
 		B7B7DC0628BF41C100F4AD13 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B7DC0528BF41C100F4AD13 /* art.scnassets */; };
+		B7F944AC28BFB2A100B7FF8B /* BasicNode+NodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F944AB28BFB2A100B7FF8B /* BasicNode+NodeConfiguration.swift */; };
+		B7F944AE28BFB48300B7FF8B /* NodeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F944AD28BFB48300B7FF8B /* NodeTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		B734415D28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SCNPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
 		B734415F28B8F6AD00F1DF66 /* ContactType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactType.swift; sourceTree = "<group>"; };
 		B7B7DC0528BF41C100F4AD13 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		B7F944AB28BFB2A100B7FF8B /* BasicNode+NodeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicNode+NodeConfiguration.swift"; sourceTree = "<group>"; };
+		B7F944AD28BFB48300B7FF8B /* NodeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,7 @@
 		638E27781FEF3FE500C2DE06 /* ARKitPhysics */ = {
 			isa = PBXGroup;
 			children = (
-				B7B7DBE328BF25B900F4AD13 /* 3DModels */,
+				B7B7DBE328BF25B900F4AD13 /* Models */,
 				B734415428B8EDD900F1DF66 /* Enums */,
 				B734414F28B8B9DE00F1DF66 /* ViewController */,
 				B734414C28B8B8A300F1DF66 /* Extensions */,
@@ -136,11 +140,13 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		B7B7DBE328BF25B900F4AD13 /* 3DModels */ = {
+		B7B7DBE328BF25B900F4AD13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B7F944AB28BFB2A100B7FF8B /* BasicNode+NodeConfiguration.swift */,
+				B7F944AD28BFB48300B7FF8B /* NodeTypes.swift */,
 			);
-			path = 3DModels;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,12 +227,14 @@
 			files = (
 				B734414E28B8B8B500F1DF66 /* float4x4++.swift in Sources */,
 				B734415828B8F0B500F1DF66 /* SCNVector3++.swift in Sources */,
+				B7F944AC28BFB2A100B7FF8B /* BasicNode+NodeConfiguration.swift in Sources */,
 				B734416028B8F6AD00F1DF66 /* ContactType.swift in Sources */,
 				B734415328B8EC4800F1DF66 /* ViewController+Node.swift in Sources */,
 				B734415628B8EDE300F1DF66 /* NodeType.swift in Sources */,
 				B734415A28B8F47100F1DF66 /* ViewController+Configuration.swift in Sources */,
 				638E277C1FEF3FE500C2DE06 /* ViewController.swift in Sources */,
 				638E277A1FEF3FE500C2DE06 /* AppDelegate.swift in Sources */,
+				B7F944AE28BFB48300B7FF8B /* NodeTypes.swift in Sources */,
 				B734415C28B8F4A200F1DF66 /* ViewController+ARSessionDelegate.swift in Sources */,
 				B734415E28B8F4C000F1DF66 /* ViewController+SCNPhysicsContactDelegate.swift in Sources */,
 				B734414B28B8B86F00F1DF66 /* ViewController+Utilies.swift in Sources */,
