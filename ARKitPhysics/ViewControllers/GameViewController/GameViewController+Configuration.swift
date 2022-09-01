@@ -1,5 +1,5 @@
 //
-//  ViewController+Configuration.swift
+//  GameViewController+Configuration.swift
 //  ARKitPhysics
 //
 //  Created by peo on 2022/08/26.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-extension ViewController {
+extension GameViewController {
     
     func setUpConfigurations() {
         setUpSceneView()
@@ -22,6 +22,7 @@ extension ViewController {
         sceneView.session.run(configuration)
         
         setUpDelegates()
+        setBackButton()
         setPlayerNode()
         startRespawnEnemyNode()
         startRespawnLifeBoxNode()
@@ -30,6 +31,12 @@ extension ViewController {
     func setUpDelegates() {
         sceneView.session.delegate = self
         sceneView.scene.physicsWorld.contactDelegate = self
+    }
+    func setBackButton() {
+        backButton.addTarget(self, action: #selector(backToStartView), for: .touchUpInside)
+    }
+    @objc func backToStartView() {
+        self.navigationController?.popViewController(animated: true)
     }
     func setPlayerNode() {
         self.playerNode = respawnPlayer().node

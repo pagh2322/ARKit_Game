@@ -1,6 +1,5 @@
 //
-//  ViewController+SCNPhysicsContactDelegate.swift
-//  ARKitPhysics
+//  GameViewController+SCNPhysicsContactDelegate.swift
 //
 //  Created by peo on 2022/08/26.
 //  Copyright © 2022 AppCoda. All rights reserved.
@@ -9,7 +8,7 @@
 import UIKit
 import ARKit
 
-extension ViewController: SCNPhysicsContactDelegate {
+extension GameViewController: SCNPhysicsContactDelegate {
     
     func physicsWorld(
         _ world: SCNPhysicsWorld,

@@ -1,5 +1,5 @@
 //
-//  ViewController+ARSessionDelegate.swift
+//  GameViewController+ARSessionDelegate.swift
 //  ARKitPhysics
 //
 //  Created by peo on 2022/08/26.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-extension ViewController: ARSessionDelegate {
+extension GameViewController: ARSessionDelegate {
     func session(
         _ session: ARSession,
         didUpdate frame: ARFrame

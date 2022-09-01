@@ -1,5 +1,5 @@
 //
-//  ViewController+Utilies.swift
+//  GameViewController+Utilies.swift
 //  ARKitPhysics
 //
 //  Created by peo on 2022/08/26.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-extension ViewController {
+extension GameViewController {
     
     func fetchForceDirection(at position: CGPoint) -> simd_float3? {
         guard

@@ -1,5 +1,5 @@
 //
-//  ViewController+Node.swift
+//  GameViewController+Node.swift
 //  ARKitPhysics
 //
 //  Created by peo on 2022/08/26.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-extension ViewController {
+extension GameViewController {
     
     func respawnPlayer() -> PlayerNodeContainer {
         let nodeContainer = generatePlayer()
@@ -49,7 +49,7 @@ extension ViewController {
         sceneView.scene.rootNode.addChildNode(nodeContainer.node)
     }
     func generateMinion() -> MinionNodeContainer {
-        let scene = SCNScene(named: "art.scnassets/Enemy.scn")!
+        let scene = SCNScene(named: "art.scnassets/Minion.scn")!
         let nodeContainer = MinionNodeContainer(node: scene.rootNode.childNodes[0])
         guard let playerNode = playerNode else { return MinionNodeContainer(node: SCNNode()) }
         nodeContainer.startMoving()
